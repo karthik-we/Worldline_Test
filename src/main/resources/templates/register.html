@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+	<title>Bootstrap Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<h2>Personal Details Form</h2>
+	<form th:action="@{/registerUser}" th:object="${user}" method="post">
+		<div class="form-group">
+			<label for="firstName">First Name:</label>
+			<input type="text" th:field="*{firstname}" class="form-control" id="firstName" placeholder="Enter First Name">
+		</div>
+		<div class="form-group">
+			<label for="lastName">Last Name:</label>
+			<input type="text" th:field="*{lastname}" class="form-control" id="lastName" placeholder="Enter Last Name">
+		</div>
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input type="email" th:field="*{email}" class="form-control" id="email" placeholder="Enter Email">
+		</div>
+		<div class="form-group">
+			<label for="dob">Date of Birth:</label>
+			<input type="date" th:field="*{dob}" class="form-control" id="dob">
+		</div>
+		<div class="form-group">
+			<label for="gender">Gender:</label>
+			<select class="form-control" th:field="*{gender}" name="gender" id="gender">
+				<option value="" >Select Gender</option>
+				<option th:field="*{gender}" name="gender" value="male">Male</option>
+				<option th:field="*{gender}" name="gender" value="female">Female</option>
+				<option th:field="*{gender}" name="gender" value="other">Other</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="address1">Address Line 1:</label>
+			<input type="text" th:field="*{address1}" class="form-control" id="address1" placeholder="Enter Address Line 1">
+		</div>
+		<div class="form-group">
+			<label for="address2">Address Line 2:</label>
+			<input type="text" th:field="*{address2}" class="form-control" id="address2" placeholder="Enter Address Line 2">
+		</div>
+		<div class="form-group">
+			<label for="city">City:</label>
+			<input type="text" th:field="*{city}" class="form-control" id="city" placeholder="Enter City">
+		</div>
+		<div class="form-group">
+			<label for="state">State:</label>
+			<input type="text" th:field="*{state}" class="form-control" id="state" placeholder="Enter State">
+		</div>
+		<div class="form-group">
+			<label for="postalCode">Postal Code:</label>
+			<input type="text"  th:field="*{postalcode}" class="form-control" id="postalCode" placeholder="Enter Postal Code">
+		</div>
+		<div class="form-group">
+			<label for="country">Country:</label>
+			<input type="text" th:field="*{country}" class="form-control" id="country" placeholder="Enter Country">
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
+
+</body>
+</html>
