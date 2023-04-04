@@ -23,8 +23,17 @@ public class UserController {
     
     @PostMapping("/registerUser")
     public String registerUser(@ModelAttribute("user") User user) {
+    	String result="error";
     	System.out.println(user);
-    	service.registerUser(user);
-    	return "home";
+    	if(user.getEmail().equals(user.getCEmail)) {
+    		try {
+    		service.registerUser(user);
+    		result="home";
+    	}
+    	catch(Exception e) {
+    		result="error";
+    	}
     }
+    return result; 
+	}
 }

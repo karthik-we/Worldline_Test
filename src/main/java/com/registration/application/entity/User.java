@@ -27,11 +27,15 @@ public class User {
     private String state;
     private String postalcode;
     private String country;
-	public String getFirstname() {
-		return firstname;
+	
+	public void setLasttname(String firstname) {
+		this.setFirstname(firstname);
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 	public String getEmail() {
 		return email;
@@ -93,5 +97,11 @@ public class User {
 	public void setPostalcode(String postalcode) {
 		this.postalcode = postalcode;
 	}
-
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	
 }

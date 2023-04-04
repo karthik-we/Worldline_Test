@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="https://www.thymeleaf.org">
+<html lang="en">
 <head>
 	<title>Bootstrap Form</title>
 	<meta charset="UTF-8">
@@ -7,8 +7,83 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#submitBtn").click(function(){
+				// validate first name
+				var firstName = $("#firstName").val();
+				if(firstName == ""){
+					alert("Please enter your first name");
+					return false;
+				}
+
+				// validate last name
+				var lastName = $("#lastName").val();
+				if(lastName == ""){
+					alert("Please enter your last name");
+					return false;
+				}
+
+				// validate email
+				var email = $("#email").val();
+				if(email == ""){
+					alert("Please enter your email");
+					return false;
+				}
+
+				// validate date of birth
+				var dob = $("#dob").val();
+				if(dob == ""){
+					alert("Please enter your date of birth");
+					return false;
+				}
+
+				// validate gender
+				var gender = $("#gender").val();
+				if(gender == ""){
+					alert("Please select your gender");
+					return false;
+				}
+
+				// validate address line 1
+				var address1 = $("#address1").val();
+				if(address1 == ""){
+					alert("Please enter your address line 1");
+					return false;
+				}
+
+				// validate city
+				var city = $("#city").val();
+				if(city == ""){
+					alert("Please enter your city");
+					return false;
+				}
+
+				// validate state
+				var state = $("#state").val();
+				if(state == ""){
+					alert("Please enter your state");
+					return false;
+				}
+
+				// validate postal code
+				var postalCode = $("#postalCode").val();
+				if(postalCode == ""){
+					alert("Please enter your postal code");
+					return false;
+				}
+
+				// validate country
+				var country = $("#country").val();
+				if(country == ""){
+					alert("Please enter your country");
+					return false;
+				}
+			});
+		});
+	</script>
 </head>
-<body>
+<body style="background-color:bisque;">
 
 <div class="container">
 	<h2>Personal Details Form</h2>
@@ -24,6 +99,10 @@
 		<div class="form-group">
 			<label for="email">Email:</label>
 			<input type="email" th:field="*{email}" class="form-control" id="email" placeholder="Enter Email">
+		</div>
+		<div class="form-group">
+			<label for="phone">Phone:</label>
+			<input type="number" th:field="*{phone}" class="form-control" id="phone" placeholder="Enter Mobile Number">
 		</div>
 		<div class="form-group">
 			<label for="dob">Date of Birth:</label>
